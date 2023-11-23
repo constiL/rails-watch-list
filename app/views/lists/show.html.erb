@@ -1,5 +1,12 @@
 <div class="container">
-<h1><%= @list.name %></h1>
+  <h1><%= @list.name %></h1>
+    <ul>
+      <% @list.bookmarks.each do | bookmark | %>
+        <li><strong><%= bookmark.movie.title %></strong></li>
+        <%= bookmark.comment %></li>
+        <% end %>
+    </ul>
 
-<%= link_to "See all lists", lists_path(@lists)%>
+  <%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
+  <%= link_to "See all lists", lists_path %>
 </div>
