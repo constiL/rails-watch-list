@@ -1,13 +1,14 @@
-<div class="container">
-<h1>Here are our Movie lists</h1>
-
-<ul>
-  <% @lists.each do | list | %>
-    <li>
-      <%= link_to list.name, list_path(list)%>
-    </li>
-  <% end %>
-</ul>
+<div class="container navbar-lewagon">
+  <h1>Here are our Movie lists</h1>
+    <div>
+      <ul id="lists">
+        <% @lists.each do | list | %>
+      <li class="card">
+        <%= link_to list.name, list_path(list)%>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to "Add a new list", new_list_path %>
 </div>

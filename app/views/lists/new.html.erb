@@ -1,8 +1,14 @@
-<div class="container">
+<div class="container navbar-lewagon">
 <h1>Add a list to our database</h1>
   <%= simple_form_for @list do | f | %>
+  <div class="form-inputs">
     <%= f.input :name %>
+  </div>
+
+    <div class="form-actions">
     <%= f.submit "Add lists", class: "btn btn-primary"%>
+      </div>
   <% end %>
-  <%= link_to "cancel", lists_path(@lists) %>
+
+  <%= link_to "back to lists", lists_path(@lists) %>
 </div>

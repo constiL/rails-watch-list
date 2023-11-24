@@ -1,9 +1,12 @@
-<div class="container">
+<div class="container navbar-lewagon">
   <h1><%= @list.name %></h1>
     <ul>
       <% @list.bookmarks.each do | bookmark | %>
-        <li><strong><%= bookmark.movie.title %></strong></li>
-        <%= bookmark.comment %></li>
+        <li class="card"><strong><%= bookmark.movie.title %></strong>
+        <%= bookmark.comment %>
+          <%= link_to "Delete bookmark", bookmark_path(bookmark),
+          data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </li>
         <% end %>
     </ul>
 
